@@ -1,0 +1,55 @@
+// Source code is decompiled from a .class file using FernFlower decompiler.
+import java.util.Scanner;
+
+public class aula {
+   public aula() {
+   }
+
+   public static void main(String[] var0) {
+      Scanner var1 = new Scanner(System.in);
+      Pilha var2 = new Pilha();
+
+      while(true) {
+         System.out.println("\nEscolha uma op\u00c3\u00a7\u00c3\u00a3o:");
+         System.out.println("1 - Empilhar item");
+         System.out.println("2 - Desempilhar item");
+         System.out.println("3 - Ver tamanho da pilha");
+         System.out.println("4 - Esvaziar pilha");
+         System.out.println("5 - Verificar se est\u00c3\u00a1 vazia");
+         System.out.println("6 - Sair");
+         int var3 = var1.nextInt();
+         var1.nextLine();
+         switch (var3) {
+            case 1:
+               System.out.print("Digite o item para empilhar: ");
+               String var4 = var1.nextLine();
+               var2.empilhar(var4);
+               System.out.println("Item empilhado!");
+               break;
+            case 2:
+               if (var2.estaVazia()) {
+                  System.out.println("A pilha est\u00c3\u00a1 vazia!");
+               } else {
+                  System.out.println("Item removido: " + (String)var2.desempilhar());
+               }
+               break;
+            case 3:
+               System.out.println("N\u00c3\u00bamero de elementos na pilha: " + var2.tamanho());
+               break;
+            case 4:
+               var2.esvaziar();
+               System.out.println("A pilha foi esvaziada!");
+               break;
+            case 5:
+               System.out.println("A pilha est\u00c3\u00a1 vazia? " + var2.estaVazia());
+               break;
+            case 6:
+               System.out.println("Saindo...");
+               var1.close();
+               return;
+            default:
+               System.out.println("Op\u00c3\u00a7\u00c3\u00a3o inv\u00c3\u00a1lida!");
+         }
+      }
+   }
+}
